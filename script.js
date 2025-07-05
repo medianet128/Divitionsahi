@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function displayPrograms(category) {
-        typeMessage(`Results for: ${category}<br>Please select a program:`);
+        typeMessage(`Results for: ${category} .Please select a program:`);
         const programs = allResults.filter(item => item.category === category);
         const optionsHtml = programs.map(prog => `<button data-program="${prog.program}">${prog.program}</button>`).join('');
         const optionsContainer = document.createElement('div');
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (match && match[1]) {
             const fileId = match[1];
             return {
-                view: `https://drive.google.com/uc?export=view&id=${fileId}`,
+                view: `https://drive.google.com/thumbnail?id=${fileId}`,
                 download: `https://drive.google.com/uc?export=download&id=${fileId}`
             };
         }
